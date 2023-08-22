@@ -55,6 +55,7 @@ type Exiftool struct {
 func NewExiftool(opts ...func(*Exiftool) error) (*Exiftool, error) {
 	e := Exiftool{
 		exiftoolBinPath: exiftoolBinary,
+		extraInitArgs: ["-d "%Y-%m-%d %H:%m:%S.%e"],
 	}
 
 	for _, opt := range opts {
